@@ -1,12 +1,12 @@
 
-@echo "ע�⣺���Թ���ԱȨ�����и�winRARһ�����ذ�װע�ἤ��ű���"
+@echo "注意：需以管理员权限运行该winRAR一键下载安装注册激活脚本。"
 @echo
-@echo "�滻���ڴ������˺����棬���عٷ����������ҵ��WinRAR��������λ����C���������Ŀ¼����"
+@echo "替换国内代理个人含广告版，下载官方镜像简中商业版WinRAR。（下载位置在C盘里的下载目录）。"
 
 @echo off
-powershell -command Invoke-WebRequest -Uri "https://www.win-rar.com/fileadmin/winrar-versions/sc/sc20220317/wrr/winrar-x64-611sc.exe" -OutFile "C:/Users/${env:UserName}/Downloads/winrar-x64-611sc.exe"&&start /wait C:\Users\%username%\Downloads\winrar-x64-611sc.exe /S
+powershell -command Invoke-WebRequest -Uri "https://www.win-rar.com/fileadmin/winrar-versions/sc/sc20230223/wrr/winrar-x64-621sc.exe" -OutFile "C:/Users/${env:UserName}/Downloads/winrar-x64-611sc.exe"&&start /wait C:\Users\%username%\Downloads\winrar-x64-611sc.exe /S
 
-@echo "��Ĭ��װWinRAR����д��ע���ļ���"
+@echo "静默安装WinRAR，并写入注册文件。"
 
 @echo off
 (
@@ -24,19 +24,19 @@ echo c9ffbc159bf2640ad5d9b88f8fa9d9cbf2b7e5b022a21938465244
 )>C:\"Program Files"\WinRAR\rarreg.key
 
 
-@echo "����ȥ�������ɣ����س�����رոô��ڡ�"
+@echo "激活去广告已完成，按回车或点叉关闭该窗口。"
 pause
 
 del %0
 
-:: ����˵��
-:: ֮ǰ��WinRAR�����谲װĬ��Ŀ¼��
-:: ���룺GB2312�����У�CRLF���޸�ע�����������ĸȱʧ���������⡣
-:: explorer.exeҲ�������أ���д����Ч����̫�鷳�ˡ�
-:: �ǹ���Ա��CMD��д�뵽C�̵�Program Files�ļ����ɹ���
-:: win7��Ҫ���ⰲװpowershell5.0�Լ�TLS/SSL�������ߡ�
+:: 其他说明
+:: 之前的WinRAR软件需安装默认目录。
+:: 编码：GB2312；换行：CRLF。修复注释造成命令字母缺失及乱码问题。
+:: explorer.exe也用于下载，但写出有效代码太麻烦了。
+:: 非管理员的CMD，写入到C盘的Program Files文件不成功。
+:: win7需要额外安装powershell5.0以及TLS/SSL管理工具。
 
-:: �ο�����
+:: 参考链接
 :: https://jingyan.baidu.com/article/14bd256e4f7b6fbb6d2612c6.htm
 :: https://learn.microsoft.com/zh-cn/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.3
 :: https://www.learnfk.com/batch-script/batch-script.aliases.html
